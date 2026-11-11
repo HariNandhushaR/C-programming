@@ -1,0 +1,58 @@
+A communication device converts decimal values into binary signals. The device generates the binary representation by repeatedly dividing the value by two.
+
+Given a non-negative decimal integer N, print its binary representation using recursion. Complete the printBinary function.
+
+Input Format
+- A single line containing an integer N.
+
+Output Format
+- Print a single continuous string of 0s and 1s representing the binary form of N.
+
+Constraints
+- 0 <= N <= 10^9
+
+Sample Test Case 1
+Input:
+10
+Output:
+1010
+Explanation:
+Repeatedly dividing 10 by 2 yields the remainders 0, 1, 0, 1 (read from bottom up), which gives the binary representation 1010.
+
+Sample Test Case 2
+Input:
+0
+Output:
+0
+Explanation:
+The binary representation of 0 is just 0.
+
+C Program
+---------------------------------------------
+#include <stdio.h>
+
+// start your solution
+
+void printBinary(int n)
+{
+    if (n > 1)
+    {
+        printBinary(n / 2);
+    }
+
+    printf("%d", n % 2);
+}
+
+// end your solution
+
+int main()
+{
+    int n;
+
+    scanf("%d", &n);
+
+    printBinary(n);
+    printf("\n");
+
+    return 0;
+}
